@@ -100,14 +100,15 @@ html {
 }
 
 /* Espacement pour le défilement (Scroll Margin) */
-#description, #product-grid, #contact-section {
+#description, #product-grid, #contact-section, #mysocialmedia {
     scroll-margin-top: 80px;
 }
 
 /* Ajoute cette règle pour éviter que le contenu ne soit collé tout en haut de l'écran après le clic */
 #description, 
 #product-grid,
-#contact-section {
+#contact-section,
+#mysocialmedia {
     scroll-margin-top: 100px;   /* Laisse de l'espace en haut pour respirer */
     display: flex;
     flex-direction: column; 
@@ -126,7 +127,7 @@ body::before {
     height: 100%;
     /* On met l'image et le filtre sombre ici */
     background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
-                url('/Site Internet/img/Photo\ de\ M🇭🇹🙏.jpg') no-repeat center center;
+                url('img/Photo\ de\ M🇭🇹🙏.jpg') no-repeat center center;
     background-size: cover;
     z-index: -1; /* Place l'image derrière ton texte et tes cartes */
     
@@ -294,29 +295,6 @@ header {
     border-radius: 5px;
     transition: background 0.3s ease, color 0.3s;
     box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2)
-}
-
-.more {
-    padding-bottom: 50px;
-}
-
-.more-about {
-    padding: 15px 30px;
-    font-size: 1rem;
-    background-color: #fff; 
-    color: #000; 
-    border: none; 
-    cursor: pointer; 
-    font-weight: bold; 
-    border-radius: 5px;
-    transition: background 0.3s ease, color 0.3s;
-    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2)
-}
-
-.more-about:hover {
-    background-color: #000;
-    color: #fff; 
-    transform: scale(1.1)
 }
 
 .lm:hover {
@@ -608,10 +586,23 @@ h1, h2, h3, h4 {
 
 .rs-links {
     padding: 50px;
+    display: flex;             /* Active le mode horizontal */
+    flex-direction: column;    /* Garde le titre au-dessus */
+    align-items: center;       /* Centre le tout horizontalement */
+    gap: 30px;                 /* Espace entre le titre et les boutons */
 }
 
 .rs-links h2 {
     padding-bottom: 50px;
+}
+
+/* Nouveau conteneur pour les boutons uniquement */
+.rs-container {
+    display: flex;             /* Aligne les boutons côte à côte */
+    flex-direction: row;       /* Force l'alignement horizontal */
+    justify-content: center;   /* Centre les boutons */
+    gap: 20px;                 /* Espace entre chaque bouton */
+    flex-wrap: wrap;           /* Permet de passer à la ligne sur petit mobile */
 }
 
 .rs-btn {
